@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>SwipeVibe — Clean Up Photos</title>
   <meta name="description" content="SwipeVibe: clean up your photo library with a few swipes a day.">
   <style>
@@ -15,10 +17,11 @@
       color: #262626;
       font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
     }
-    main { max-width: 560px; padding: 48px 24px; text-align: center; }
+    main { position: relative; z-index: 1; max-width: 560px; padding: 48px 24px; text-align: center; }
     h1 { font-size: 32px; margin: 0 0 8px; }
     p { font-size: 16px; line-height: 1.5; margin: 0 0 32px; color: #7B7B7B; }
     nav a { display: inline-block; margin: 0 12px; color: #262626; }
+    .floating-shapes { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
   </style>
 </head>
 <body>
@@ -26,10 +29,11 @@
     <h1>SwipeVibe</h1>
     <p>Clean up your photo library — a few swipes a day, gigabytes back.</p>
     <nav>
-      <a href="https://docs.google.com/document/d/1OEbkFgVcdggndqflOK_hPX4rLhK2wq4a/preview">Terms of Use</a>
-      <a href="https://docs.google.com/document/d/112DR3Rrekc94JUldc2nyvMeTVp9mIYjs/preview">Privacy Policy</a>
+      <a href="/terms.html">Terms of Use</a>
+      <a href="/privacy.html">Privacy Policy</a>
       <a href="mailto:deep.value4u@gmail.com">Support</a>
     </nav>
   </main>
+  <script src="/shapes.js" defer></script>
 </body>
 </html>
